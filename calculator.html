@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator using JavaScript</title>
+    <style>
+        body{
+            font-family: 'Arial Narrow', Arial, sans-serif;
+            font-size: 25px;
+        }
+        #containor{
+            background-color: rgb(167, 165, 156);
+            width: 500px;
+            height: 510px;
+            display: grid;
+            grid-template-rows:110px repeat(5,1fr);
+            grid-template-columns:repeat(4,1fr) ; 
+            grid-gap: 5px;
+            padding: 10px;
+            border-radius: 15px;
+            border: 5px solid rgb(63, 59, 59);
+            box-sizing: border-box;
+        }
+
+        button{
+            background: rgb(54, 54, 53);
+            border-radius: 15px;
+            font-size: 25px;
+            color: antiquewhite;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+        button:active{
+            background: rgb(211, 77, 77);
+        }
+        #ans{
+            grid-area: 1/1 / 2/5;
+            color: black;
+            padding-right:10px ;
+            background: rgb(82, 228, 82);
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            flex-direction: column;
+            border-radius: 10px;
+            border: 5px solid black;
+            box-sizing: border-box;
+        }
+        #ac{
+            grid-area: 2/1 / 3/3 ;
+            background: rgb(211, 77, 77);
+        }
+        #equal{
+            grid-area: 6/3  /  7/5;
+            background: rgb(211, 77, 77);
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div id="containor" onclick="addNumber(this)" class="number">
+        <div id="ans"></div>
+        <button onclick="addNumber(this)" class="number" id="ac" >AC</button>
+        <button onclick="addNumber(this)" class="number" id="del">DEL</button>
+        <button onclick="addNumber(this)" class="oparator" id="/">/</button>
+        <button onclick="addNumber(this)" class="number" id="1">1</button>
+        <button onclick="addNumber(this)" class="number" id="2">2</button>
+        <button onclick="addNumber(this)" class="number" id="3">3</button>
+        <button onclick="addNumber(this)" class="oparator" id="+">+</button>
+        <button onclick="addNumber(this)" class="number" id="4">4</button>
+        <button onclick="addNumber(this)" class="number" id="5">5</button>
+        <button onclick="addNumber(this)" class="number" id="6">6</button>
+        <button onclick="addNumber(this)" class="oparator" id="-">-</button>
+        <button onclick="addNumber(this)" class="number" id="7">7</button>
+        <button onclick="addNumber(this)" class="number" id="8">8</button>
+        <button onclick="addNumber(this)" class="number" id="9">9</button>
+        <button onclick="addNumber(this)" class="oparator" id="*">*</button>
+        <button onclick="addNumber(this)" class="number" id=".">.</button>
+        <button onclick="addNumber(this)" class="number" id="0">0</button>
+        <button onclick="addNumber(this)" class="oparator" id="equal">=</button>
+    </div>
+    <script>
+        document.getElementById('ans').nodeValue="";
+        
+        function addNumber(this){
+            var a=  document.getElementById('ans').innerHTML;
+            document.write(a + this.innerHTML);
+            
+        }
+    </script>
+</body>
+</html>
